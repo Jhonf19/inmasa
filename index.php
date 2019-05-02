@@ -1,5 +1,10 @@
 <?php
-
+  if (isset($_POST['peso'])) {
+    // code...
+    $R = $_POST['peso']/($_POST['altura'] * 2);
+  }else {
+    $R="Resultado";
+  }
  ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -10,10 +15,21 @@
 
   </head>
   <body>
-
-    <div class="con">
+    <br><br><br><br>
+    <div class="container">
       <div class="row">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="col m4d">
+          <form action="index.php" method="post">
+            <input type="number" name="peso" value="" placeholder="Peso (kg)">
+            <input type="number" name="altura" value="" placeholder="Estatura (cm)">
+            <button type="submit" name="button">Calcular</button>
+          </form>
+        </div>
+        <div class="col md">
+          <div class="card" style="width: 15rem;">
+            <h1><?php echo $R; ?></h1>
+          </div>
+        </div>
       </div>
     </div>
 
