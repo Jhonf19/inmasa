@@ -1,7 +1,27 @@
 <?php
-  if (isset($_POST['peso'])) {
-    // code...
-    $R = $_POST['peso']/($_POST['altura'] * 2);
+  if (isset($_GET['imc'])) {
+    $imc = $_GET['imc'];
+    switch ($imc) {
+      case 1:
+        $R = 'Bajo Peso';
+        break;
+      case 2:
+        $R = 'Peso Normal';
+        break;
+      case 3:
+        $R = 'Sobrepeso';
+        break;
+      case 4:
+        $R = 'Obesidad grado I';
+        break;
+      case 5:
+        $R = 'Obesidad grado II';
+        break;
+      case 6:
+        $R = 'Obesidad grado III';
+        break;
+
+    }
   }else {
     $R="Resultado";
   }
@@ -19,7 +39,7 @@
     <div class="container">
       <div class="row">
         <div class="col m4d">
-          <form action="index.php" method="post">
+          <form action="controller.php" method="post">
             <input type="number" name="peso" value="" placeholder="Peso (kg)">
             <input type="number" name="altura" value="" placeholder="Estatura (cm)">
             <button type="submit" name="button">Calcular</button>
