@@ -1,31 +1,3 @@
-<?php
-  if (isset($_GET['imc'])) {
-    $imc = $_GET['imc'];
-    switch ($imc) {
-      case 1:
-        $R = 'Bajo Peso';
-        break;
-      case 2:
-        $R = 'Peso Normal';
-        break;
-      case 3:
-        $R = 'Sobrepeso';
-        break;
-      case 4:
-        $R = 'Obesidad grado I';
-        break;
-      case 5:
-        $R = 'Obesidad grado II';
-        break;
-      case 6:
-        $R = 'Obesidad grado III';
-        break;
-
-    }
-  }else {
-    $R="Resultado";
-  }
- ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
@@ -47,7 +19,8 @@
         </div>
         <div class="col md">
           <div class="card" style="width: 15rem;">
-            <h1><?php echo $R; ?></h1>
+
+            <h1><?php if(isset($_GET['m'])){echo $_GET['m']; }else{echo 'Resultado';} ?></h1>
           </div>
         </div>
       </div>
